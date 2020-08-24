@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
     Tag.destroy({
         where: { id: req.params.id }
     })
-        .then(dbTagData => res.json("Deleted Tag ID " + dbTagData))
+        .then(dbTagData => res.json("Deleted Tag ID " + req.params.id))
         .catch(err => {
             console.log(err);
             res.status(400).json(err);
